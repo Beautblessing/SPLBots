@@ -1,7 +1,5 @@
 package spl.demo.model;
 
-import java.util.Arrays;
-
 import javax.xml.bind.annotation.XmlAttribute;
 
 public class Parameters {

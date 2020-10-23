@@ -1,6 +1,9 @@
 package spl.demo.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -57,8 +60,35 @@ public class Alt {
     @Override
     public String toString()
     {
+    	// Add Intents
+    	Intents intents = new Intents();
+        List<String> inputs = new ArrayList<String>();
+
+        // Add training phrases in the arraylist
+        inputs.add("I want to know the type of " +name+" that is available");
+        inputs.add(name);
+        inputs.add("See available " +name);
+        inputs.add("what " +name+" type is available");
+        
+        intents.setInputs(inputs);
+        
+        
+        //	Add	Entity
+        Entities entities = new Entities();
+        // List<String> synonyms = new ArrayList<String>();
+
+        
+//        entities.setValue(name);
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter synonymns for " + name);
+//       
+//
+//         String syn =scanner.nextLine();
+//         synonyms.add(syn);
+        
+    	
     	//return "Alt [ name = "+name+", mandatory = "+mandatory+", feature = "+ Arrays.toString(feature)+"]";
-    	return "Alt [ name = "+name+", mandatory = "+mandatory+" \n "+ Arrays.toString(feature)+"]";
+    	return "Alt [ "+name+": inputs {"+inputs+" } mandatory = "+mandatory+" \n "+ Arrays.toString(feature)+"]";
     
     
     }

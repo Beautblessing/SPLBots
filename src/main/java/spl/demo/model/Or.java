@@ -1,6 +1,8 @@
 package spl.demo.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -43,8 +45,24 @@ public class Or {
     @Override
     public String toString()
     {
-       // return "Or [ name = "+name+", feature = "+ Arrays.toString(feature) +"]";
-        return "Or [ name = "+name+" \n "+ Arrays.toString(feature) +"]";
+    	// Added
+    	Intents intents = new Intents();
+        List<String> inputs = new ArrayList<String>();
+
+        // Add training phrases in the arraylist
+        inputs.add("I want to know the type of " +name+" that is available");
+        inputs.add(name);
+        inputs.add("See available " +name);
+        inputs.add("what " +name+" type is available");
+        
+        
+        
+        intents.setInputs(inputs);
+        
+        // 
+    	
+        return "Or [ "+name+": inputs {"+inputs+" } feature = "+ Arrays.toString(feature) +"]";
+//        return "Or [ "+name+": "+inputs+" + Arrays.toString(feature) +"]""
         
     }
 }

@@ -1,7 +1,9 @@
 package spl.demo.model;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -114,16 +116,36 @@ public class And {
         this.mandatory = mandatory;
     }
 
+
+    
+    
     @Override
     public String toString()
     {
-        //return "And [or = "+ or+", name = "+name+", alt = "+alt+", mandatory = "+mandatory+"]";
-    
-        //return "And Root = "+name+", mandatory = "+mandatory+", feature = "+ Arrays.toString(feature)+" [alt = "+alt+", or = "+ or+"]";
+    	// Added
+    	Intents intents = new Intents();
+        List<String> inputs = new ArrayList<String>();
+
+        // Add training phrases in the arraylist
+        inputs.add("I need help with selecting a configuration");
+        inputs.add("Yes");
+        inputs.add("yes, I want to select a configuration");
+        inputs.add("yes, I would like to choose a configuration");
+        inputs.add("ys, what features do you have");
+        inputs.add("yes, what features are available\"");
+        inputs.add("yes, I´d love to");
+        inputs.add("why not");
+        inputs.add("yes, I do");
         
-       // return "And Root = "+name+", abstract = "+_abstract+", mandatory = "+mandatory+", feature = "+ Arrays.toString(feature)+", and = "+ Arrays.toString(and)+" [alt = "+alt+", or = "+ or+"]";
-    	return "And = "+name+", abstract = "+_abstract+", mandatory = "+mandatory+" feature = "+ Arrays.toString(feature)+", \n and = "+ Arrays.toString(and)+" \n alt = "+alt+" \n or = "+or+"";
+        
+        
+        intents.setInputs(inputs);
+        
+        //        
+        
+       return "Intents: \n" +name+": inputs {"+inputs+" } abstract = "+_abstract+", mandatory = "+mandatory+" feature = "+ Arrays.toString(feature)+", \n and = "+ Arrays.toString(and)+" \n alt = "+alt+" \n or = "+or+"";
 
     }
+ 
     	
 }

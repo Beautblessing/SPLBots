@@ -3,6 +3,7 @@ package spl.demo;
 import spl.demo.model. *;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,7 +11,7 @@ import javax.xml.bind.Unmarshaller;
 public class App {
 
     public static void main(String args[]) throws JAXBException{
-        File file = new File("/Users/usuario/Documents/eclipse4/FMDemoReader/src/p1.xml");
+        File file = new File("/Users/usuario/Documents/eclipse4/SPLBotDemo/src/p1.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(FeatureModel.class);
 
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -18,7 +19,8 @@ public class App {
         
      
         System.out.println(featureModel);
-
+        
+       
 
     }
 }  
