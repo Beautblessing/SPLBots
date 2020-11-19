@@ -57,9 +57,8 @@ public class FeatureModel {
 	    @Override
 	    public String toString()
 	    {
-	       // return "FeatureModel \n  [struct = "+struct+", comments = "+comments+", constraints = "+constraints+"]";
-	        return "FeatureModel \n "+struct+" \n comments = "+comments+" \n constraints = "+constraints+"";
-	  	  
+	    	return struct+" \n";
+		  	  
 	    }
 	    
 	    

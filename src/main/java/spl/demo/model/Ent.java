@@ -4,9 +4,10 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 
-public class Intents {
+public class Ent {
 
 	List<String> inputs;
+	
 
 	 public List<String> getInputs() {
 	        return inputs;
@@ -17,4 +18,5 @@ public class Intents {
 	    }
 
 	
+
 }

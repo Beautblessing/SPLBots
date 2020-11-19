@@ -1,64 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="1">
-		<struct>
-			<and mandatory="true" name="Eclipse">
-				<feature name="JDT"/>
-				<feature name="CDT"/>
-				<feature name="AJDT"/>
-				<and name="FeatureModeling">
-					<feature name="CIDE"/>
-					<feature name="FAMILIAR"/>
-					<or name="FeatureIDE">
-						<feature mandatory="true" name="AHEAD"/>
-						<feature mandatory="true" name="FeatureHouse"/>
-						<feature mandatory="true" name="FeatureCpp"/>
-						<feature mandatory="true" name="DeltaJ"/>
-						<feature mandatory="true" name="AspectJ"/>
-						<feature mandatory="true" name="Munge"/>
-						<feature mandatory="true" name="Antenna"/>
-						<feature mandatory="true" name="DeltaMontiArc"/>
-					</or>
-					<feature name="ExtendedFM"/>
-					<feature name="MoSoPoLiTe"/>
-				</and>
-				<feature name="DeltaJEclipsePlugin"/>
+<featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="Eclipse">
+			<feature name="JDT"/>
+			<feature name="CDT"/>
+			<feature name="AJDT"/>
+			<and name="FeatureModeling">
+				<feature name="CIDE"/>
+				<feature name="FAMILIAR"/>
+				<or name="FeatureIDE">
+					<feature name="AHEAD"/>
+					<feature name="FeatureHouse"/>
+					<feature name="FeatureCpp"/>
+					<feature name="DeltaJ"/>
+					<feature name="AspectJ"/>
+					<feature name="Munge"/>
+					<feature name="Antenna"/>
+					<feature name="DeltaMontiArc"/>
+				</or>
+				<feature name="ExtendedFM"/>
+				<feature name="MoSoPoLiTe"/>
 			</and>
-		</struct>
-		<constraints>
-			<rule>
-				<imp>
+			<feature name="DeltaJEclipsePlugin"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<disj>
+					<var>AHEAD</var>
 					<disj>
-						<var>AHEAD</var>
+						<var>FeatureHouse</var>
 						<disj>
-							<var>FeatureHouse</var>
-							<disj>
-								<var>Munge</var>
-								<var>Antenna</var>
-							</disj>
+							<var>Munge</var>
+							<var>Antenna</var>
 						</disj>
 					</disj>
-					<var>JDT</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>FeatureCpp</var>
-					<var>CDT</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>AspectJ</var>
-					<var>AJDT</var>
-				</imp>
-			</rule>
-			<rule>
-				<imp>
-					<var>DeltaJ</var>
-					<var>DeltaJEclipsePlugin</var>
-				</imp>
-			</rule>
-		</constraints>
-		<comments/>
-		<featureOrder userDefined="false"/>
-	</featureModel>
+				</disj>
+				<var>JDT</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>FeatureCpp</var>
+				<var>CDT</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>AspectJ</var>
+				<var>AJDT</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>DeltaJ</var>
+				<var>DeltaJEclipsePlugin</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

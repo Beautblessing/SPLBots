@@ -1,9 +1,9 @@
 package spl.demo.model;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -13,11 +13,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
+
 @XmlRootElement(name = "and")
 
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({Or.class, Alt.class, Feature.class})
+@XmlSeeAlso({Or.class, Alt.class, Feature.class, Entity.class})
 public class And {
 	
 	@XmlAttribute
@@ -38,6 +39,13 @@ public class And {
 
 	@XmlElement(name="alt")
     private Alt alt;
+	
+	
+	//added
+	
+    private Entity entity;
+	
+	//
 	
 	// added
     @XmlElement(name="and")
@@ -82,7 +90,17 @@ public class And {
         this.alt = alt;
     }
 
+    //added
     
+    public Entity getEntity ()
+    {
+        return entity;
+    }
+
+    public void setEntity (Entity entity)
+    {
+        this.entity = entity;
+    }
     
     // added
     public And[] getAnd ()
@@ -117,35 +135,60 @@ public class And {
     }
 
 
-    
+    static Intents intents = new Intents();
+    static List<String> inputs = new ArrayList<String>();
+    static List<String> greetinputs = new ArrayList<String>();
+ 
     
     @Override
     public String toString()
-    {
-    	// Added
-    	Intents intents = new Intents();
-        List<String> inputs = new ArrayList<String>();
-
-        // Add training phrases in the arraylist
-        inputs.add("I need help with selecting a configuration");
-        inputs.add("Yes");
-        inputs.add("yes, I want to select a configuration");
-        inputs.add("yes, I would like to choose a configuration");
-        inputs.add("ys, what features do you have");
-        inputs.add("yes, what features are available\"");
-        inputs.add("yes, I´d love to");
-        inputs.add("why not");
-        inputs.add("yes, I do");
-        
-        
-        
-        intents.setInputs(inputs);
-        
-        //        
-        
-       return "Intents: \n" +name+": inputs {"+inputs+" } abstract = "+_abstract+", mandatory = "+mandatory+" feature = "+ Arrays.toString(feature)+", \n and = "+ Arrays.toString(and)+" \n alt = "+alt+" \n or = "+or+"";
-
-    }
- 
+    {     
     	
+//        printIntent();
+    	// Add Intents    	    
+        // Add training phrases in the arraylist
+    	inputs.add("\"What are the support features for " +name +"\"");
+  	  	inputs.add("\"What feature is supported by " +name +"\"");
+  	  	inputs.add("\"What is the support feature for " +name +"\"");
+
+        intents.setInputs(inputs);
+     
+       //String result = name+": \n inputs {"+Arrays.toString(inputs.toArray()).replace("[", "").replace("]", "")+" } " + "\n";
+        
+        String result = name+": \n inputs {"+inputs.toString().substring(1, inputs.toString().length() - 1)+" } " + "\n";
+        if(feature!= null) {result += Arrays.toString(feature)+" \n ";}
+        if(and!= null) {result += Arrays.toString(and)+" \n ";}
+        if(alt!= null) { result += alt+" \n ";}
+        if(or!= null) {result += or+" \n ";}
+//        result += entity+" \n ";
+        
+  
+       // return name+": \n inputs {"+Arrays.toString(inputs.toArray()).replace("[", "").replace("]", "")+" } abstract = "+_abstract+", mandatory = "+mandatory+" "+ Arrays.toString(feature)+" \n "+ Arrays.toString(and)+" \n "+alt+" \n "+or+"\n"+entity+"";
+        return result;
+        //return name+": \n inputs {"+Arrays.toString(inputs.toArray()).replace("[", "").replace("]", "")+" } "+ Arrays.toString(feature)+" \n "+ Arrays.toString(and)+" \n "+alt+" \n "+or+"\n"+entity+"";
+        
+    }
+    
+ 
+
+ //add training phrases
+ public static void printIntent() {
+	 	//standard help
+//	  inputs.add("\"What are the support features for" +name +"\"");
+//	  inputs.add("\"What feature is supported by" +name +"\"");
+//	  inputs.add("\"What is the support feature for" +name +"\"");
+//      inputs.add("\"yes I want to select a configuration\"");
+//      inputs.add("\"yes I would like to choose a configuration\"");
+//      inputs.add("\"ys what features do you have\"");
+//      inputs.add("\"yes what features are available\"");
+//      inputs.add("\"yes I´d love to\"");
+//      inputs.add("\"why not\"");
+//      inputs.add("\"yes I do\"");
+      
+      //set Inputs
+    //  intents.setInputs(inputs); 
+    
+ }
+ //add training phrases
+	
 }

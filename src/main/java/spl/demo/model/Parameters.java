@@ -1,11 +1,17 @@
 package spl.demo.model;
 
+
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAttribute;
 
 public class Parameters {
 	
 	@XmlAttribute
-    private String name;
+    private Feature[] feature;
+	
+	@XmlAttribute
+    private String eName;
 	
 	@XmlAttribute
     private String required;
@@ -13,17 +19,49 @@ public class Parameters {
 	@XmlAttribute
     private String prompts;
 	
-	private String[] parameters;
+	//private String[] parameters;
 	
-	public String getName ()
-    {
-        return name;
+	List<String> paramss;
+	
+	public List<String> getParamss() {
+        return paramss;
     }
 
-	public void setName (String name)
-    {
-        this.name = name;
+    public void setParamss(List<String> paramss) {
+        this.paramss = paramss;
     }
+    
+    
+	List<Parameters> params;
+	
+	public List<Parameters> getParams() {
+        return params;
+    }
+
+    public void setParams(List<Parameters> params) {
+        this.params = params;
+    }
+	
+	 public Parameters(Feature[] feature, String eName, String required, String prompts) {
+		 
+//		 this.pName = pNamee;
+		 this.feature = feature;
+		 this.eName = eName;
+		 this.required = required;
+		 this.prompts = prompts;
+	    }
+
+	
+	public String getEName ()
+    {
+        return eName;
+    }
+
+	public void setEName (String eName)
+    {
+        this.eName = eName;
+    }
+	
     public String getRequired ()
     {
         return required;
@@ -43,17 +81,12 @@ public class Parameters {
     {
         this.prompts = prompts;
     }
-	public String[] getParameters() {
-		return parameters;
+	public Feature[] getFeature() {
+		return feature;
 	}
 
-	public void setParameters(String[] parameters) {
-		this.parameters = parameters;
+	public void setFeature(Feature[] feature) {
+		this.feature = feature;
 	}
-	
-	 @Override
-	    public String toString()
-	    {
-	        return "parameters: \n entity "+name+", "+required+", prompts ["+prompts+"]";
-	    }
+
 }

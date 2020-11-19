@@ -1,0 +1,213 @@
+Chatbot SPLBot language: en
+
+intents: 
+	Car:
+		inputs{
+			"Hi", 
+			"Howdy",
+			"Hello", 
+			"Hey",
+			"Heya",
+			"hey there",
+			"good morning",
+			"good afternoon",
+			"good evening"
+		}
+
+	Car_yes:
+	inputs{
+		"Yes", 
+		"yes, I want to select a configuration",
+		"yes, I would like to choose a configuration",
+		"ys, what features do you have", 
+		"yes, what features are available",
+		"yes, I´d love to", 
+		"why not",
+		"exactly", 
+		"yes, I do"
+	}
+
+	Car_no:
+	inputs{
+		"Thanks, but no", 
+		"no",
+		"nah,I´m good",
+		"no way",
+		"na",
+		"I can´t"
+	}
+	
+	Transmission:
+		inputs{
+			"I want to know the type of transmission that is available",
+			"Transmission",
+			"See available transmission",
+			"what transmission type is available"
+		}
+	
+	Select_Transmission:
+		inputs{
+			("automatic")[transmission_type],
+			"I want" (auto)[transmission_type],
+			"I´d like " ("automatic transmission")[transmission_type],
+			"I´ll go with " (auto)[transmission_type],
+			"Give me " (auto)[transmission_type],
+			("auto")[transmission_type],
+			("manual")[transmission_type],
+			"I want" (manual)[transmission_type],
+			("manual transmission")[transmission_type],
+			"I´ll go with " (manual)[transmission_type],
+			"Give me " (manual)[transmission_type]
+
+		}
+		parameters:
+			transmission_type: entity transmission, required, prompts ["Which transmission?(Manual or Automatic)"];
+			
+	Select_Transmission_yes:
+		inputs{
+			"Yes", 
+			"yes, I want entertainment",
+			"ys, what entertainment do you have", 
+			"yes, what entertainments are available",
+			"yes, I´d love to", 
+			"why not",
+			"exactly", 
+			"yes, I do"
+		}
+
+	Select_Transmission_no:
+		inputs{
+			"Thanks, but no", 
+			"no",
+			"nah,I´m good",
+			"no way",
+			"na",
+			"I can´t"
+		}
+
+	Entertainment:
+			inputs{
+				"I want to see the available entertainment",
+				"Entertainment",
+				"See available entertainment",
+				"what entertainment type is available"
+			}
+
+	Select_Entertainment:
+			inputs{
+				("CD")[entertainment_type], 
+				"I want" (CD)[entertainment_type], 
+				"I´ll have only" (CD)[entertainment_type],
+				"I will go with" (CD)[entertainment_type] "and" ("Radio")[entertainment_type], 
+				"I need a" ("CD player")[entertainment_type],
+				"I need " ("cd")[entertainment_type] "and" (Radio)[entertainment_type],
+				"I´d like just " (CD)[entertainment_type],
+				("Radio")[entertainment_type], 
+				"I want" (radio)[entertainment_type], 
+				"I´ll have only" ("AM-FM")[entertainment_type],
+				"I will go with" (radio)[entertainment_type] "and" (CD)[entertainment_type], 
+				"I need a " ("radio")[entertainment_type],
+				"I need " ("radio")[entertainment_type] "and" (CD)[entertainment_type],
+				"I´d like just " (radio)[entertainment_type]
+
+			}
+			
+			parameters:
+				entertainment_type: entity entertainment, required, prompts ["What type of entertainment do you want, CD, Radio or both?"];
+				
+
+
+			
+	entities:	
+		Simple entity "transmission":
+			inputs in en{
+				"Automatic transmission" synonyms auto, automatic, "automatic-drive", "automatic drive", "auto-drive", "auto-transmission"
+				"Manual transmission" synonyms manual, "manual-drive", "manual-drive", "manual-transmission"
+			}
+
+		Simple entity "entertainment":
+			inputs in en{	
+				"Radio" synonyms Radio,"AM-FM"	
+				"CD" synonyms CD, "CD player", "Compact disc"
+			}
+		
+
+	actions:
+		text response CarResponse:
+			inputs{
+				"Hello there! I am here to help you with configuring your software product line. Would you like to proceed?", 
+				"Hi, welcome to SPLBot! Would you like to select a configuration?"
+			}
+			
+		text response Car_yesResponse:
+			inputs{ 
+				"Great! You can begin with transmission; enter transmission to see the type of transmission available"
+				
+			}
+		text response Car_noResponse:
+			inputs{
+				"Thank you for using SPLBot!"
+			}
+
+
+		text response SelectTransmissionResponse:
+			
+			inputs{
+				"You have selected the feature: " 
+				["Select_Transmission.transmission_type"]  "Would you like entertainment? If yes, enter your preferred entertainment (Radio, CD or both). If not, enter no entertainment"
+
+			}
+		text response SelectTransmission_yesResponse:
+			inputs{ 
+				"Enter entertainment to see what´s available"
+				
+			}
+		text response SelectTransmission_noResponse:
+			inputs{
+				"You have selected:\n" 
+				"\t- feature:" ["Select_Transmission.transmission_type"]"\n"
+				"Thank you for using SPLBot!"
+			}
+			
+		
+
+		text response EntertainmentResponse:
+			
+			inputs{
+				"You have selected the feature: " ["Select_Entertainment.entertainment_type"]
+				
+			}
+	
+			
+		text response TransmissionType:
+			inputs{
+			"What type of transmission? (manual or automatic)"
+			}
+
+		text response EntertainmentType:
+			inputs{
+			"What type of entertainment? (cd, radio or both)"
+			}		
+			
+	flows:
+		- user Car => chatbot CarResponse{
+			=> user Car_yes => chatbot Car_yesResponse;
+			=> user Car_no =>  chatbot Car_noResponse;
+		};
+
+
+		- user Transmission => chatbot TransmissionType{
+			=> user "Select_Transmission" => chatbot SelectTransmissionResponse{
+			=> user "Select_Transmission_yes" => chatbot SelectTransmission_yesResponse;
+			=> user "Select_Transmission_no" =>  chatbot SelectTransmission_noResponse;
+		};
+			
+	};	
+
+	- user Entertainment => chatbot EntertainmentType{
+			=> user "Select_Entertainment" => chatbot EntertainmentResponse;
+			
+		};
+
+
+
