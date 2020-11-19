@@ -44,7 +44,7 @@ public class Parameters {
 	
 	 public Parameters(Feature[] feature, String eName, String required, String prompts) {
 		 
-//		 this.pName = pNamee;
+
 		 this.feature = feature;
 		 this.eName = eName;
 		 this.required = required;

@@ -15,8 +15,6 @@ public class Entity {
 	
 	private EInputs[] inputs;
 	
-	
-	
 	//added
 	
 	@XmlElement(name="feature")

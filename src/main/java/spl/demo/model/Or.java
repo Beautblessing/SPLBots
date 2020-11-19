@@ -96,11 +96,11 @@ public class Or {
         
         //	Add	Parameters
         
-       // Parameters parameters = new Parameters(feature, name, "required", "prompts");  
+        Parameters parameters = new Parameters(feature, name, "required", "prompts");  
          List<String> paramss = new ArrayList<String>(); 
         // paramss.add("parameters: \n"+ pName +": "+ "entity " +name +", " + "required" +", "+ "prompts"+" [\"What type of " +name+"?\"]");
          paramss.add("parameters: \n"+ name+"_type: "+ "entity " +name +", " + "required" +", "+ "prompts"+" [\"What type of " +name+"?\"]");       
-       //  parameters.setParamss(paramss);
+         parameters.setParamss(paramss);
          
         // Feature select phrases
      	for(Feature ft: feature) {
