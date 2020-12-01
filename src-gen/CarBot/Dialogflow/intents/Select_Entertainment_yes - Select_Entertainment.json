@@ -1,0 +1,49 @@
+{
+	"id": "6d2e977b-e1f5-4008-aa31-7cb20c9230ed",
+	"name": "Select_Entertainment_yes - Select_Entertainment",
+	"auto": true,
+	"contexts": ["Select_Entertainment_yes-followup"],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [
+			],
+			"parameters": [
+				{
+					"id": "b92b10bd-f056-4876-a31e-30f0285dda67",
+					"required": true,
+					"dataType": "@entertainment",
+					"name": "Entertainment_type",
+					"value": "$Entertainment_type",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "What type of Entertainment?"
+						}
+					],
+					"isList":true 
+				}
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"condition": "",
+					"speech": [
+						"You have selected the feature:  $Entertainment_type "
+					]
+				}
+	],
+	"defaultResponsePlatforms": {},
+	"speech": []
+	}
+	],
+	"priority": 500000,
+	"webhookUsed": false,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false,
+	"events": [],
+	"conditionalResponses": [],
+	"condition": "",
+	"conditionalFollowupEvents": []
+}

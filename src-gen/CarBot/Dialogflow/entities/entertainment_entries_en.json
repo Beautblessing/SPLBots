@@ -1,0 +1,34 @@
+[
+	{
+	   "value": "Radio",
+	   "synonyms": [
+	   	"Radio",
+	   	"radio",
+	   	" radiocommunication",
+	   	" wireless",
+	   	" radio receiver",
+	   	" receiving set",
+	   	" radio set",
+	   	" tuner"
+	   ]
+	} ,
+	{
+	   "value": "CD",
+	   "synonyms": [
+	   	"CD",
+	   	"cadmium",
+	   	" Cd",
+	   	" atomic number 48",
+	   	" candle",
+	   	" candela",
+	   	" cd",
+	   	" standard candle",
+	   	" certificate of deposit",
+	   	" CD",
+	   	" compact disk",
+	   	" compact disc",
+	   	" four hundred",
+	   	" 400"
+	   ]
+	} 
+]

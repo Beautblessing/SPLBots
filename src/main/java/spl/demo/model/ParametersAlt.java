@@ -5,16 +5,13 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 
-public class Parameters {
+public class ParametersAlt {
 	
 	@XmlAttribute
     private Feature[] feature;
 	
 	@XmlAttribute
     private String eName;
-	
-	@XmlAttribute
-    private String isList;
 	
 	@XmlAttribute
     private String required;
@@ -35,22 +32,21 @@ public class Parameters {
     }
     
     
-	List<Parameters> params;
+	List<ParametersAlt> params;
 	
-	public List<Parameters> getParams() {
+	public List<ParametersAlt> getParams() {
         return params;
     }
 
-    public void setParams(List<Parameters> params) {
+    public void setParams(List<ParametersAlt> params) {
         this.params = params;
     }
 	
-	 public Parameters(Feature[] feature, String eName, String isList, String required, String prompts) {
+	 public ParametersAlt(Feature[] feature, String eName, String required, String prompts) {
 		 
 
 		 this.feature = feature;
 		 this.eName = eName;
-		 this.isList = isList;
 		 this.required = required;
 		 this.prompts = prompts;
 	    }
@@ -64,16 +60,6 @@ public class Parameters {
 	public void setEName (String eName)
     {
         this.eName = eName;
-    }
-	
-	public String getIsList ()
-    {
-        return isList;
-    }
-
-	public void setIsList (String isList)
-    {
-        this.isList = isList;
     }
 	
     public String getRequired ()

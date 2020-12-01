@@ -1,0 +1,194 @@
+[
+{
+  "id": "86ca9a15-5cc9-4110-9bf9-1660deb6306f",
+  "data": [
+{
+  "text": "Radio",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "05500205-3369-4954-8cf6-3468ee82c378",
+  "data": [
+{
+  "text": "I want",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "Radio",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "73de0c21-52d7-49e0-b539-673ae6e94c38",
+  "data": [
+{
+  "text": "I´ll go with",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "Radio",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "953f990f-41e4-4516-8f06-5efc2cd6f0ce",
+  "data": [
+{
+  "text": "Give me",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "Radio",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "d15a81d9-c26d-48e8-9c14-09d51921568b",
+  "data": [
+{
+  "text": "CD",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "ad2098f2-e42e-4ff8-8fbb-ae06789d44b4",
+  "data": [
+{
+  "text": "I want",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "CD",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "166e6cd5-badb-496a-b9a7-674e36a6e6e3",
+  "data": [
+{
+  "text": "I´ll go with",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "CD",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "2d5a37d2-7121-43e3-82d0-c78afbb2e106",
+  "data": [
+{
+  "text": "Give me",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+},
+{
+  "text": "CD",
+  "alias": "Entertainment_type",
+  "meta": "@entertainment",
+  "userDefined": true
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+}
+ ]

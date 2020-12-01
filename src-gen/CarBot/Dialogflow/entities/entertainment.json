@@ -1,0 +1,10 @@
+
+{
+	"id": "ad1efad0-445e-4fc6-b678-64cc93cce27d",
+	"name": "entertainment",
+	"isOverridable": true,	  
+	"isEnum": false,
+	"isRegexp": false,
+	"automatedExpansion": true,
+	"allowFuzzyExtraction": true
+}

@@ -1,0 +1,79 @@
+intents:
+  - Greeting
+  - Help
+  - Help_yes
+  - Help_no
+  - Car
+  - Transmission
+  - Select_Transmission
+  - Select_Entertainment_yes
+  - Select_Entertainment_no
+  - Entertainment
+  - Select_Entertainment
+
+entities:
+  - Select_Transmission.Transmission_type
+  - Select_Entertainment.Entertainment_type
+
+slots:
+  Select_Transmission.Transmission_type:
+    type: unfeaturized
+    auto_fill: false
+  Select_Entertainment.Entertainment_type:
+    type: unfeaturized
+    auto_fill: false
+
+templates:
+  utter_ask_Select_Transmission.Transmission_type:
+  - text: "What type of Transmission?"
+  utter_wrong_Select_Transmission.Transmission_type:
+  - text: "I can not understand the Transmission_type, please try again"
+  utter_ask_Select_Entertainment.Entertainment_type:
+  - text: "What type of Entertainment?"
+  utter_wrong_Select_Entertainment.Entertainment_type:
+  - text: "I can not understand the Entertainment_type, please try again"
+  utter_GreetingResponse:
+  - text: "Hello there! I am here to help you with configuring your software product line. Would you like to proceed? "
+  - text: "Hi, welcome to SPLBot! Would you like to select a configuration? "
+  - text: "Hi, welcome to SPLBot! Do you need help? "
+  - text: "Hi, welcome to SPLBot! What can I help you with? "
+  utter_HelpResponse:
+  - text: "yes, I can help you with configuring your software product line. Would you like to proceed? "
+  - text: "I can help you with configuring your software product line. Would you like to proceed? "
+  utter_Help_noResponse:
+  - text: "Thank you for using SPLBot! "
+  utter_Help_yesResponse:
+  - text: "Great! To begin, enter Transmission "
+  utter_TransmissionPrompt:
+  - text: "enter Transmission to see available feature(s) to select "
+  utter_TransmissionResponse:
+  - text: "You have selected the feature:  {Select_Transmission.Transmission_type} "
+  utter_EntertainmentPrompt:
+  - text: "Would you like Entertainment? If yes, enter Entertainment to select "
+  utter_EntertainmentResponse:
+  - text: "You have selected the feature:  {Select_Entertainment.Entertainment_type} "
+  utter_TransmissionType:
+  - text: "You can only choose one feature from these list of features:
+  Manual, Automatic "
+  utter_EntertainmentType:
+  - text: "You can choose one or more of the following features:
+  Radio, CD "
+
+actions:
+
+  - utter_GreetingResponse
+  - utter_HelpResponse
+  - utter_Help_noResponse
+  - utter_Help_yesResponse
+  - utter_TransmissionPrompt
+  - utter_TransmissionResponse
+  - utter_EntertainmentPrompt
+  - utter_EntertainmentResponse
+  - utter_TransmissionType
+  - utter_EntertainmentType
+  - Select_Transmission_clean
+  - Select_Entertainment_clean
+
+forms:
+  - Select_Transmission_form
+  - Select_Entertainment_form

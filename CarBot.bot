@@ -1,0 +1,207 @@
+Chatbot CarBot language: en 
+
+ intents:
+Greeting: 
+ inputs {
+	"Howdy", 
+	"Hi", 
+	"Hello", 
+	"Hey", 
+	"Heya", 
+	"hey there", 
+	"good morning", 
+	"good afternoon", 
+	"good evening" 
+} 
+Help: 
+ inputs {
+	"Can you help me", 
+	"I need help", 
+	"what can I do", 
+	"what can you do" 
+} 
+Help_yes: 
+ inputs {
+	"I need help with selecting a configuration", 
+	"Yes", 
+	"yes I want to select a configuration", 
+	"yes I would like to choose a configuration", 
+	"ys what features do you have", 
+	"yes what features are available", 
+	"yes I´d love to", 
+	"why not", 
+	"yes I do" 
+} 
+Help_no: 
+ inputs {
+	"Thanks, but no", 
+	"No", 
+	"nah,I´m good", 
+	"not at all", 
+	"never", 
+	"no way" 
+} 
+
+Car: 
+ inputs {
+	"What are the support features for Car", 
+	"What feature is supported by Car", 
+	"What is the support feature for Car" 
+} 
+Transmission: 
+ inputs {
+	"I want to know the type of Transmission that is available", 
+	"Transmission", 
+	"See available Transmission", 
+	"what Transmission type is available" 
+} 
+Select_Transmission: 
+ inputs {
+
+	("Manual")[Transmission_type], 
+	"I want" ("Manual")[Transmission_type], 
+	"I´ll go with" ("Manual")[Transmission_type], 
+	"Give me" ("Manual")[Transmission_type], 
+	("Automatic")[Transmission_type], 
+	"I want" ("Automatic")[Transmission_type], 
+	"I´ll go with" ("Automatic")[Transmission_type], 
+	"Give me" ("Automatic")[Transmission_type] 
+}  
+ 
+parameters: 
+Transmission_type: entity transmission, required, prompts ["What type of Transmission?"];
+  
+ 
+Select_Entertainment_yes: 
+ inputs {
+	"yes, I want Entertainment", 
+	"Entertainment", 
+	"yes", 
+	"yes, what Entertainment is available", 
+	"yes I do" 
+} 
+Select_Entertainment_no: 
+ inputs {
+	"Thanks, I do not want Entertainment", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+Entertainment: 
+ inputs {
+	"I want to know the type of Entertainment that is available", 
+	"Entertainment", 
+	"See available Entertainment", 
+	"what Entertainment type is available" 
+} 
+Select_Entertainment: 
+ inputs {
+
+	("Radio")[Entertainment_type], 
+	"I want" ("Radio")[Entertainment_type], 
+	"I´ll go with" ("Radio")[Entertainment_type], 
+	"Give me" ("Radio")[Entertainment_type], 
+	("CD")[Entertainment_type], 
+	"I want" ("CD")[Entertainment_type], 
+	"I´ll go with" ("CD")[Entertainment_type], 
+	"Give me" ("CD")[Entertainment_type] 
+}  
+ 
+parameters: 
+Entertainment_type: entity entertainment, isList, required, prompts ["What type of Entertainment?"]; 
+ 	
+ 
+
+entities:
+Simple entity "transmission":
+ inputs in en{ 
+"Manual" synonyms "manual", " manual of arms"
+"Automatic" synonyms "automatic rifle", " automatic", " machine rifle", " automatic pistol", " automatonlike", " machinelike", " robotlike", " robotic", " reflex", " reflexive"
+
+}
+Simple entity "entertainment":
+ inputs in en{ 
+"Radio" synonyms "radio", " radiocommunication", " wireless", " radio receiver", " receiving set", " radio set", " tuner"
+"CD" synonyms "cadmium", " Cd", " atomic number 48", " candle", " candela", " cd", " standard candle", " certificate of deposit", " CD", " compact disk", " compact disc", " four hundred", " 400"
+
+}
+
+ actions:
+text response GreetingResponse: 
+ inputs {
+
+	"Hello there! I am here to help you with configuring your software product line. Would you like to proceed?", 
+	"Hi, welcome to SPLBot! Would you like to select a configuration?", 
+	"Hi, welcome to SPLBot! Do you need help?", 
+	"Hi, welcome to SPLBot! What can I help you with?" 
+} 
+text response HelpResponse: 
+ inputs {
+
+	"yes, I can help you with configuring your software product line. Would you like to proceed?", 
+	"I can help you with configuring your software product line. Would you like to proceed?" 
+} 
+text response Help_noResponse: 
+ inputs {
+
+	"Thank you for using SPLBot!" 
+} 
+text response Help_yesResponse: 
+ inputs {
+ "Great! To begin, enter Transmission"
+ } 
+text response TransmissionPrompt: 
+ inputs {
+ "enter Transmission to see available feature(s) to select"
+
+}
+text response TransmissionResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_Transmission.Transmission_type"]
+
+}
+text response EntertainmentPrompt: 
+ inputs {
+ "Would you like Entertainment? If yes, enter Entertainment to select"
+
+}
+text response EntertainmentResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_Entertainment.Entertainment_type"]
+
+}
+text response TransmissionType:
+ inputs{ 
+"You can only choose one feature from these list of features:
+Manual, Automatic"
+}
+text response EntertainmentType:
+ inputs{ 
+"You can choose one or more of the following features:
+Radio, CD"
+}
+flows:
+- user Greeting => chatbot GreetingResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user Help => chatbot HelpResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user Transmission  => chatbot TransmissionType{ 
+	=> user "Select_Transmission" => chatbot TransmissionResponse;
+};
+- user Entertainment  => chatbot EntertainmentType{ 
+	=> user "Select_Entertainment" => chatbot EntertainmentResponse;
+};
+- user Select_Entertainment_yes  => chatbot EntertainmentType{ 
+	=> user "Select_Entertainment" => chatbot EntertainmentResponse;
+};
+Code generation finished.

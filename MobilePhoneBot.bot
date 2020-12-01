@@ -1,0 +1,311 @@
+Chatbot MobilePhoneBot language: en 
+
+ intents:
+Greeting: 
+ inputs {
+	"Howdy", 
+	"Hi", 
+	"Hello", 
+	"Hey", 
+	"Heya", 
+	"hey there", 
+	"good morning", 
+	"good afternoon", 
+	"good evening" 
+} 
+Help: 
+ inputs {
+	"Can you help me", 
+	"I need help", 
+	"what can I do", 
+	"what can you do" 
+} 
+Help_yes: 
+ inputs {
+	"I need help with selecting a configuration", 
+	"Yes", 
+	"yes I want to select a configuration", 
+	"yes I would like to choose a configuration", 
+	"ys what features do you have", 
+	"yes what features are available", 
+	"yes I´d love to", 
+	"why not", 
+	"yes I do" 
+} 
+Help_no: 
+ inputs {
+	"Thanks, but no", 
+	"No", 
+	"nah,I´m good", 
+	"not at all", 
+	"never", 
+	"no way" 
+} 
+
+Mobile Phone: 
+ inputs {
+	"What are the support features for Mobile Phone", 
+	"What feature is supported by Mobile Phone", 
+	"What is the support feature for Mobile Phone" 
+} 
+Calls: 
+ inputs {
+	
+	("Calls")[Calls_type], 
+	"I want" ("Calls")[Calls_type], 
+	"I´ll go with" ("Calls")[Calls_type], 
+	"Give me" ("Calls")[Calls_type] 
+} 
+Select_Calls_yes: 
+ inputs {
+	"yes, I want Calls", 
+	"yes", 
+	"yes I do" 
+} 
+Select_Calls_no: 
+ inputs {
+	"Thanks, I do not want Calls", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+Calls_type: entity calls, required, prompts ["enter Calls?"];
+ 
+GPS: 
+ inputs {
+	
+	("GPS")[GPS_type], 
+	"I want" ("GPS")[GPS_type], 
+	"I´ll go with" ("GPS")[GPS_type], 
+	"Give me" ("GPS")[GPS_type] 
+} 
+Select_GPS_yes: 
+ inputs {
+	"yes, I want GPS", 
+	"yes", 
+	"yes I do" 
+} 
+Select_GPS_no: 
+ inputs {
+	"Thanks, I do not want GPS", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+GPS_type: entity gps, required, prompts ["enter GPS?"];
+ 
+Screen: 
+ inputs {
+	"I want to know the type of Screen that is available", 
+	"Screen", 
+	"See available Screen", 
+	"what Screen type is available" 
+} 
+Select_Screen: 
+ inputs {
+
+	("Basic")[Screen_type], 
+	"I want" ("Basic")[Screen_type], 
+	"I´ll go with" ("Basic")[Screen_type], 
+	"Give me" ("Basic")[Screen_type], 
+	("Colour")[Screen_type], 
+	"I want" ("Colour")[Screen_type], 
+	"I´ll go with" ("Colour")[Screen_type], 
+	"Give me" ("Colour")[Screen_type], 
+	("High resolution")[Screen_type], 
+	"I want" ("High resolution")[Screen_type], 
+	"I´ll go with" ("High resolution")[Screen_type], 
+	"Give me" ("High resolution")[Screen_type] 
+}  
+ 
+parameters: 
+Screen_type: entity screen, required, prompts ["What type of Screen?"];
+  
+ 
+Select_Media_yes: 
+ inputs {
+	"yes, I want Media", 
+	"Media", 
+	"yes", 
+	"yes, what Media is available", 
+	"yes I do" 
+} 
+Select_Media_no: 
+ inputs {
+	"Thanks, I do not want Media", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+Media: 
+ inputs {
+	"I want to know the type of Media that is available", 
+	"Media", 
+	"See available Media", 
+	"what Media type is available" 
+} 
+Select_Media: 
+ inputs {
+
+	("Mp3 player")[Media_type], 
+	"I want" ("Mp3 player")[Media_type], 
+	"I´ll go with" ("Mp3 player")[Media_type], 
+	"Give me" ("Mp3 player")[Media_type], 
+	("Camera")[Media_type], 
+	"I want" ("Camera")[Media_type], 
+	"I´ll go with" ("Camera")[Media_type], 
+	"Give me" ("Camera")[Media_type] 
+}  
+ 
+parameters: 
+Media_type: entity media, isList, required, prompts ["What type of Media?"]; 
+ 	
+ 
+
+entities:
+Simple entity "screen":
+ inputs in en{ 
+"Basic" synonyms "BASIC", " basic", " staple", " canonic", " canonical", " introductory"
+"Colour" synonyms "coloring material", " colouring material", " color", " colour", " people of color", " people of colour", " vividness", " coloration", " colouration", " coloring", " colouring", " semblance", " gloss", " emblazon", " tinge", " distort", " colorize", " colorise", " colourise", " colourize", " color in", " colour in", " discolor", " discolour"
+"High resolution" synonyms "High resolution"
+
+}
+Simple entity "media":
+ inputs in en{ 
+"Mp3 player" synonyms "Mp3 player"
+"Camera" synonyms "camera", " photographic camera", " television camera", " tv camera"
+
+}
+Simple entity "calls":
+ inputs in en{ 
+"Calls" synonyms "call", " phone call", " telephone call", " Call", " cry", " outcry", " yell", " shout", " vociferation", " claim", " birdcall", " birdsong", " song", " margin call", " call option", " name", " telephone", " call up", " phone", " ring", " shout out", " scream", " holler", " hollo", " squall", " send for", " visit", " call in", " address", " bid", " call off", " predict", " foretell", " prognosticate", " forebode", " anticipate", " promise"
+
+}
+Simple entity "gps":
+ inputs in en{ 
+"GPS" synonyms "Global Positioning System", " GPS"
+
+}
+
+ actions:
+text response GreetingResponse: 
+ inputs {
+
+	"Hello there! I am here to help you with configuring your software product line. Would you like to proceed?", 
+	"Hi, welcome to SPLBot! Would you like to select a configuration?", 
+	"Hi, welcome to SPLBot! Do you need help?", 
+	"Hi, welcome to SPLBot! What can I help you with?" 
+} 
+text response HelpResponse: 
+ inputs {
+
+	"yes, I can help you with configuring your software product line. Would you like to proceed?", 
+	"I can help you with configuring your software product line. Would you like to proceed?" 
+} 
+text response Help_noResponse: 
+ inputs {
+
+	"Thank you for using SPLBot!" 
+} 
+text response Help_yesResponse: 
+ inputs {
+ "Great! To begin, enter Calls"
+ } 
+text response GPSPrompt: 
+ inputs {
+ "Would you like GPS? If yes, enter GPS to select"
+
+}
+text response GPSResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_GPS.GPS_type"]
+	" Would you like Calls? If yes, enter Calls"
+	" Would you like Screen? If yes, enter Screen"
+	" Would you like Media? If yes, enter Media"
+
+}
+text response CallsPrompt: 
+ inputs {
+ "enter Calls to select"
+
+}
+text response CallsResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_Calls.Calls_type"]
+	" Would you like GPS? If yes, enter GPS"
+	" Would you like Screen? If yes, enter Screen"
+	" Would you like Media? If yes, enter Media"
+
+}
+text response ScreenPrompt: 
+ inputs {
+ "enter Screen to see available feature(s) to select"
+
+}
+text response ScreenResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_Screen.Screen_type"]
+	" Would you like Calls? If yes, enter Calls"
+	" Would you like GPS? If yes, enter GPS"
+	" Would you like Media? If yes, enter Media"
+
+}
+text response MediaPrompt: 
+ inputs {
+ "Would you like Media? If yes, enter Media to select"
+
+}
+text response MediaResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_Media.Media_type"]
+	" Would you like Calls? If yes, enter Calls"
+	" Would you like GPS? If yes, enter GPS"
+	" Would you like Screen? If yes, enter Screen"
+
+}
+text response ScreenType:
+ inputs{ 
+"You can only choose one feature from these list of features:
+Basic, Colour, High resolution"
+}
+text response MediaType:
+ inputs{ 
+"You can choose one or more of the following features:
+Mp3 player, Camera"
+}
+flows:
+- user Greeting => chatbot GreetingResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user Help => chatbot HelpResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user Calls  => chatbot CallsType{ 
+	=> user "Select_Calls" => chatbot CallsResponse;
+};
+- user GPS  => chatbot GPSType{ 
+	=> user "Select_GPS" => chatbot GPSResponse;
+};
+- user Screen  => chatbot ScreenType{ 
+	=> user "Select_Screen" => chatbot ScreenResponse;
+};
+- user Media  => chatbot MediaType{ 
+	=> user "Select_Media" => chatbot MediaResponse;
+};
+- user Select_Media_yes  => chatbot MediaType{ 
+	=> user "Select_Media" => chatbot MediaResponse;
+};

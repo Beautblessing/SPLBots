@@ -1,0 +1,35 @@
+{
+	"id": "1afdaef7-40a6-45f5-bc10-4ada1b7b7d70",
+	"name": "Greeting - Help_yes",
+	"auto": true,
+	"contexts": ["Greeting-followup"],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [
+			],
+			"parameters": [
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"condition": "",
+					"speech": [
+						"Great! To begin, enter Transmission "
+					]
+				}
+	],
+	"defaultResponsePlatforms": {},
+	"speech": []
+	}
+	],
+	"priority": 500000,
+	"webhookUsed": false,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false,
+	"events": [],
+	"conditionalResponses": [],
+	"condition": "",
+	"conditionalFollowupEvents": []
+}

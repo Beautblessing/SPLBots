@@ -1,0 +1,26 @@
+[
+	{
+	   "value": "Manual",
+	   "synonyms": [
+	   	"Manual",
+	   	"manual",
+	   	" manual of arms"
+	   ]
+	} ,
+	{
+	   "value": "Automatic",
+	   "synonyms": [
+	   	"Automatic",
+	   	"automatic rifle",
+	   	" automatic",
+	   	" machine rifle",
+	   	" automatic pistol",
+	   	" automatonlike",
+	   	" machinelike",
+	   	" robotlike",
+	   	" robotic",
+	   	" reflex",
+	   	" reflexive"
+	   ]
+	} 
+]

@@ -1,0 +1,49 @@
+{
+	"id": "46be5b3e-92fb-489f-b1ca-bd6b6729cada",
+	"name": "Transmission - Select_Transmission",
+	"auto": true,
+	"contexts": ["Transmission-followup"],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [
+			],
+			"parameters": [
+				{
+					"id": "14c18afe-c2dd-4f6d-98b0-43ebcd37098a",
+					"required": true,
+					"dataType": "@transmission",
+					"name": "Transmission_type",
+					"value": "$Transmission_type",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "What type of Transmission?"
+						}
+					],
+					"isList":false 
+				}
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"condition": "",
+					"speech": [
+						"You have selected the feature:  $Transmission_type "
+					]
+				}
+	],
+	"defaultResponsePlatforms": {},
+	"speech": []
+	}
+	],
+	"priority": 500000,
+	"webhookUsed": false,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false,
+	"events": [],
+	"conditionalResponses": [],
+	"condition": "",
+	"conditionalFollowupEvents": []
+}

@@ -1,0 +1,66 @@
+[
+{
+  "id": "6e78a8cc-61c6-4047-873d-bd872f4ac7d2",
+  "data": [
+{
+  "text": "I want to know the type of Entertainment that is available",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "0c9bb4d5-3cfc-45c0-950e-0de527dbde64",
+  "data": [
+{
+  "text": "Entertainment",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "06ab6dcb-f9eb-4bb8-9422-90b12e12c8a7",
+  "data": [
+{
+  "text": "See available Entertainment",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "adee62c9-27ed-49d4-a945-aa1a95599b0a",
+  "data": [
+{
+  "text": "what Entertainment type is available",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+}
+ ]

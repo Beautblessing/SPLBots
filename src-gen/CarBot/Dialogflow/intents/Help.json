@@ -1,0 +1,41 @@
+{
+	"id": "d4236820-877f-426d-b7d4-975166d7565b",
+	"name": "Help",
+	"auto": true,
+	"contexts": [],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [
+				{
+					"name": "Help-followup",
+					"parameters": {},
+					"lifespan": 2
+				}
+			],
+			"parameters": [
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"condition": "",
+					"speech": [
+						"yes, I can help you with configuring your software product line. Would you like to proceed? ",
+						"I can help you with configuring your software product line. Would you like to proceed? "
+					]
+				}
+	],
+	"defaultResponsePlatforms": {},
+	"speech": []
+	}
+	],
+	"priority": 500000,
+	"webhookUsed": false,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false,
+	"events": [],
+	"conditionalResponses": [],
+	"condition": "",
+	"conditionalFollowupEvents": []
+}

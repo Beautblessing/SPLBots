@@ -12,7 +12,8 @@
 	<struct>
 		<and abstract="true" mandatory="true" name="SvgMapApp">
 			<feature name="L2Build"/>
-			<and abstract="true" mandatory="true" name="Layers">
+			<and abstract="true" name="Layers">
+				<graphics key="collapsed" value="false"/>
 				<feature name="ColorRegion"/>
 				<feature name="Relief"/>
 				<feature name="Rivers"/>
@@ -20,7 +21,9 @@
 				<feature name="PopCircle"/>
 			</and>
 			<and abstract="true" mandatory="true" name="Legends">
+				<graphics key="collapsed" value="false"/>
 				<and abstract="true" name="Controls">
+					<graphics key="collapsed" value="false"/>
 					<feature name="Navigator"/>
 					<feature name="ReliefControls"/>
 					<feature name="RiverControls"/>
@@ -29,12 +32,14 @@
 					<feature name="CoordinateDisplay"/>
 				</and>
 				<and abstract="true" name="Stats1">
+					<graphics key="collapsed" value="false"/>
 					<feature name="AgeChart"/>
 					<feature name="StatsMedianAge"/>
 					<feature name="EthnicBarChart"/>
 					<feature name="EthnicPieChart"/>
 				</and>
 				<and abstract="true" name="Stats2">
+					<graphics key="collapsed" value="false"/>
 					<feature name="StatsSex"/>
 					<feature name="StatsHouseholds"/>
 					<feature name="StatsPopulation"/>

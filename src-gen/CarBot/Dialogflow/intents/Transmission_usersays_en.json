@@ -1,0 +1,66 @@
+[
+{
+  "id": "245a01c1-ca4a-4a98-90c0-ef7b1946719d",
+  "data": [
+{
+  "text": "I want to know the type of Transmission that is available",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "5994aea4-6455-43ba-9dce-3b5f97c09ec7",
+  "data": [
+{
+  "text": "Transmission",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "4b441e60-25e0-4984-94ee-20d82d0b6f3f",
+  "data": [
+{
+  "text": "See available Transmission",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+},
+{
+  "id": "395b7340-2ba0-4e0f-a6aa-9cc5bc9f908b",
+  "data": [
+{
+  "text": "what Transmission type is available",
+  "userDefined": false
+},
+{
+	"text": " ",
+	"userDefined": false
+}
+],
+"isTemplate": false,
+"count": 0,
+"updated": 0
+}
+ ]

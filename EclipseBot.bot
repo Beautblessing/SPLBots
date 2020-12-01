@@ -1,0 +1,638 @@
+Chatbot EclipseBot language: en 
+
+ intents:
+Greeting: 
+ inputs {
+	"Howdy", 
+	"Hi", 
+	"Hello", 
+	"Hey", 
+	"Heya", 
+	"hey there", 
+	"good morning", 
+	"good afternoon", 
+	"good evening" 
+} 
+Help: 
+ inputs {
+	"Can you help me", 
+	"I need help", 
+	"what can I do", 
+	"what can you do" 
+} 
+Help_yes: 
+ inputs {
+	"I need help with selecting a configuration", 
+	"Yes", 
+	"yes I want to select a configuration", 
+	"yes I would like to choose a configuration", 
+	"ys what features do you have", 
+	"yes what features are available", 
+	"yes I´d love to", 
+	"why not", 
+	"yes I do" 
+} 
+Help_no: 
+ inputs {
+	"Thanks, but no", 
+	"No", 
+	"nah,I´m good", 
+	"not at all", 
+	"never", 
+	"no way" 
+} 
+
+Eclipse: 
+ inputs {
+	"What are the support features for Eclipse", 
+	"What feature is supported by Eclipse", 
+	"What is the support feature for Eclipse" 
+} 
+JDT: 
+ inputs {
+	
+	("JDT")[JDT_type], 
+	"I want" ("JDT")[JDT_type], 
+	"I´ll go with" ("JDT")[JDT_type], 
+	"Give me" ("JDT")[JDT_type] 
+} 
+Select_JDT_yes: 
+ inputs {
+	"yes, I want JDT", 
+	"yes", 
+	"yes I do" 
+} 
+Select_JDT_no: 
+ inputs {
+	"Thanks, I do not want JDT", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+JDT_type: entity jdt, required, prompts ["enter JDT?"];
+ 
+CDT: 
+ inputs {
+	
+	("CDT")[CDT_type], 
+	"I want" ("CDT")[CDT_type], 
+	"I´ll go with" ("CDT")[CDT_type], 
+	"Give me" ("CDT")[CDT_type] 
+} 
+Select_CDT_yes: 
+ inputs {
+	"yes, I want CDT", 
+	"yes", 
+	"yes I do" 
+} 
+Select_CDT_no: 
+ inputs {
+	"Thanks, I do not want CDT", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+CDT_type: entity cdt, required, prompts ["enter CDT?"];
+ 
+AJDT: 
+ inputs {
+	
+	("AJDT")[AJDT_type], 
+	"I want" ("AJDT")[AJDT_type], 
+	"I´ll go with" ("AJDT")[AJDT_type], 
+	"Give me" ("AJDT")[AJDT_type] 
+} 
+Select_AJDT_yes: 
+ inputs {
+	"yes, I want AJDT", 
+	"yes", 
+	"yes I do" 
+} 
+Select_AJDT_no: 
+ inputs {
+	"Thanks, I do not want AJDT", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+AJDT_type: entity ajdt, required, prompts ["enter AJDT?"];
+ 
+DeltaJEclipsePlugin: 
+ inputs {
+	
+	("DeltaJEclipsePlugin")[DeltaJEclipsePlugin_type], 
+	"I want" ("DeltaJEclipsePlugin")[DeltaJEclipsePlugin_type], 
+	"I´ll go with" ("DeltaJEclipsePlugin")[DeltaJEclipsePlugin_type], 
+	"Give me" ("DeltaJEclipsePlugin")[DeltaJEclipsePlugin_type] 
+} 
+Select_DeltaJEclipsePlugin_yes: 
+ inputs {
+	"yes, I want DeltaJEclipsePlugin", 
+	"yes", 
+	"yes I do" 
+} 
+Select_DeltaJEclipsePlugin_no: 
+ inputs {
+	"Thanks, I do not want DeltaJEclipsePlugin", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+DeltaJEclipsePlugin_type: entity deltajeclipseplugin, required, prompts ["enter DeltaJEclipsePlugin?"];
+ 
+FeatureModeling: 
+ inputs {
+	"What are the support features for FeatureModeling", 
+	"What feature is supported by FeatureModeling", 
+	"What is the support feature for FeatureModeling" 
+} 
+CIDE: 
+ inputs {
+	
+	("CIDE")[CIDE_type], 
+	"I want" ("CIDE")[CIDE_type], 
+	"I´ll go with" ("CIDE")[CIDE_type], 
+	"Give me" ("CIDE")[CIDE_type] 
+} 
+Select_CIDE_yes: 
+ inputs {
+	"yes, I want CIDE", 
+	"yes", 
+	"yes I do" 
+} 
+Select_CIDE_no: 
+ inputs {
+	"Thanks, I do not want CIDE", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+CIDE_type: entity cide, required, prompts ["enter CIDE?"];
+ 
+FAMILIAR: 
+ inputs {
+	
+	("FAMILIAR")[FAMILIAR_type], 
+	"I want" ("FAMILIAR")[FAMILIAR_type], 
+	"I´ll go with" ("FAMILIAR")[FAMILIAR_type], 
+	"Give me" ("FAMILIAR")[FAMILIAR_type] 
+} 
+Select_FAMILIAR_yes: 
+ inputs {
+	"yes, I want FAMILIAR", 
+	"yes", 
+	"yes I do" 
+} 
+Select_FAMILIAR_no: 
+ inputs {
+	"Thanks, I do not want FAMILIAR", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+FAMILIAR_type: entity familiar, required, prompts ["enter FAMILIAR?"];
+ 
+ExtendedFM: 
+ inputs {
+	
+	("ExtendedFM")[ExtendedFM_type], 
+	"I want" ("ExtendedFM")[ExtendedFM_type], 
+	"I´ll go with" ("ExtendedFM")[ExtendedFM_type], 
+	"Give me" ("ExtendedFM")[ExtendedFM_type] 
+} 
+Select_ExtendedFM_yes: 
+ inputs {
+	"yes, I want ExtendedFM", 
+	"yes", 
+	"yes I do" 
+} 
+Select_ExtendedFM_no: 
+ inputs {
+	"Thanks, I do not want ExtendedFM", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+ExtendedFM_type: entity extendedfm, required, prompts ["enter ExtendedFM?"];
+ 
+MoSoPoLiTe: 
+ inputs {
+	
+	("MoSoPoLiTe")[MoSoPoLiTe_type], 
+	"I want" ("MoSoPoLiTe")[MoSoPoLiTe_type], 
+	"I´ll go with" ("MoSoPoLiTe")[MoSoPoLiTe_type], 
+	"Give me" ("MoSoPoLiTe")[MoSoPoLiTe_type] 
+} 
+Select_MoSoPoLiTe_yes: 
+ inputs {
+	"yes, I want MoSoPoLiTe", 
+	"yes", 
+	"yes I do" 
+} 
+Select_MoSoPoLiTe_no: 
+ inputs {
+	"Thanks, I do not want MoSoPoLiTe", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+
+parameters: 
+MoSoPoLiTe_type: entity mosopolite, required, prompts ["enter MoSoPoLiTe?"];
+ 
+Select_FeatureIDE_yes: 
+ inputs {
+	"yes, I want FeatureIDE", 
+	"FeatureIDE", 
+	"yes", 
+	"yes, what FeatureIDE is available", 
+	"yes I do" 
+} 
+Select_FeatureIDE_no: 
+ inputs {
+	"Thanks, I do not want FeatureIDE", 
+	"Thanks, but no", 
+	"no", 
+	"nah,I´m good" 
+} 
+FeatureIDE: 
+ inputs {
+	"I want to know the type of FeatureIDE that is available", 
+	"FeatureIDE", 
+	"See available FeatureIDE", 
+	"what FeatureIDE type is available" 
+} 
+Select_FeatureIDE: 
+ inputs {
+
+	("AHEAD")[FeatureIDE_type], 
+	"I want" ("AHEAD")[FeatureIDE_type], 
+	"I´ll go with" ("AHEAD")[FeatureIDE_type], 
+	"Give me" ("AHEAD")[FeatureIDE_type], 
+	("FeatureHouse")[FeatureIDE_type], 
+	"I want" ("FeatureHouse")[FeatureIDE_type], 
+	"I´ll go with" ("FeatureHouse")[FeatureIDE_type], 
+	"Give me" ("FeatureHouse")[FeatureIDE_type], 
+	("FeatureCpp")[FeatureIDE_type], 
+	"I want" ("FeatureCpp")[FeatureIDE_type], 
+	"I´ll go with" ("FeatureCpp")[FeatureIDE_type], 
+	"Give me" ("FeatureCpp")[FeatureIDE_type], 
+	("DeltaJ")[FeatureIDE_type], 
+	"I want" ("DeltaJ")[FeatureIDE_type], 
+	"I´ll go with" ("DeltaJ")[FeatureIDE_type], 
+	"Give me" ("DeltaJ")[FeatureIDE_type], 
+	("AspectJ")[FeatureIDE_type], 
+	"I want" ("AspectJ")[FeatureIDE_type], 
+	"I´ll go with" ("AspectJ")[FeatureIDE_type], 
+	"Give me" ("AspectJ")[FeatureIDE_type], 
+	("Munge")[FeatureIDE_type], 
+	"I want" ("Munge")[FeatureIDE_type], 
+	"I´ll go with" ("Munge")[FeatureIDE_type], 
+	"Give me" ("Munge")[FeatureIDE_type], 
+	("Antenna")[FeatureIDE_type], 
+	"I want" ("Antenna")[FeatureIDE_type], 
+	"I´ll go with" ("Antenna")[FeatureIDE_type], 
+	"Give me" ("Antenna")[FeatureIDE_type], 
+	("DeltaMontiArc")[FeatureIDE_type], 
+	"I want" ("DeltaMontiArc")[FeatureIDE_type], 
+	"I´ll go with" ("DeltaMontiArc")[FeatureIDE_type], 
+	"Give me" ("DeltaMontiArc")[FeatureIDE_type] 
+}  
+ 
+parameters: 
+FeatureIDE_type: entity featureide, isList, required, prompts ["What type of FeatureIDE?"]; 
+  
+ 	
+ 
+
+entities:
+Simple entity "featureide":
+ inputs in en{ 
+"AHEAD" synonyms "ahead", " in front", " before", " forward", " onward", " onwards", " forwards", " forrader", " in advance", " beforehand", " out front", " in the lead", " leading"
+"FeatureHouse" synonyms "FeatureHouse"
+"FeatureCpp" synonyms "FeatureCpp"
+"DeltaJ" synonyms "DeltaJ"
+"AspectJ" synonyms "AspectJ"
+"Munge" synonyms "Munge"
+"Antenna" synonyms "antenna", " aerial", " transmitting aerial", " feeler"
+"DeltaMontiArc" synonyms "DeltaMontiArc"
+
+}
+Simple entity "jdt":
+ inputs in en{ 
+"JDT" synonyms "JDT"
+
+}
+Simple entity "cdt":
+ inputs in en{ 
+"CDT" synonyms "CDT"
+
+}
+Simple entity "ajdt":
+ inputs in en{ 
+"AJDT" synonyms "AJDT"
+
+}
+Simple entity "cide":
+ inputs in en{ 
+"CIDE" synonyms "CIDE"
+
+}
+Simple entity "familiar":
+ inputs in en{ 
+"FAMILIAR" synonyms "familiar", " companion", " comrade", " fellow", " associate", " familiar spirit", " conversant", " intimate"
+
+}
+Simple entity "extendedfm":
+ inputs in en{ 
+"ExtendedFM" synonyms "ExtendedFM"
+
+}
+Simple entity "mosopolite":
+ inputs in en{ 
+"MoSoPoLiTe" synonyms "MoSoPoLiTe"
+
+}
+Simple entity "deltajeclipseplugin":
+ inputs in en{ 
+"DeltaJEclipsePlugin" synonyms "DeltaJEclipsePlugin"
+
+}
+
+ actions:
+text response GreetingResponse: 
+ inputs {
+
+	"Hello there! I am here to help you with configuring your software product line. Would you like to proceed?", 
+	"Hi, welcome to SPLBot! Would you like to select a configuration?", 
+	"Hi, welcome to SPLBot! Do you need help?", 
+	"Hi, welcome to SPLBot! What can I help you with?" 
+} 
+text response HelpResponse: 
+ inputs {
+
+	"yes, I can help you with configuring your software product line. Would you like to proceed?", 
+	"I can help you with configuring your software product line. Would you like to proceed?" 
+} 
+text response Help_noResponse: 
+ inputs {
+
+	"Thank you for using SPLBot!" 
+} 
+text response Help_yesResponse: 
+ inputs {
+ "Great! To begin, enter JDT"
+ } 
+text response JDTPrompt: 
+ inputs {
+ "Would you like JDT? If yes, enter JDT to select"
+
+}
+text response JDTResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_JDT.JDT_type"]
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response CDTPrompt: 
+ inputs {
+ "Would you like CDT? If yes, enter CDT to select"
+
+}
+text response CDTResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_CDT.CDT_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response AJDTPrompt: 
+ inputs {
+ "Would you like AJDT? If yes, enter AJDT to select"
+
+}
+text response AJDTResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_AJDT.AJDT_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response DeltaJEclipsePluginPrompt: 
+ inputs {
+ "Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin to select"
+
+}
+text response DeltaJEclipsePluginResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_DeltaJEclipsePlugin.DeltaJEclipsePlugin_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+
+}
+text response FeatureModelingPrompt: 
+ inputs {
+ "Would you like FeatureModeling? If yes, enter FeatureModeling to see available feature(s) to select"
+
+}
+text response CIDEPrompt: 
+ inputs {
+ "Would you like CIDE? If yes, enter CIDE to select"
+
+}
+text response CIDEResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_CIDE.CIDE_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response FAMILIARPrompt: 
+ inputs {
+ "Would you like FAMILIAR? If yes, enter FAMILIAR to select"
+
+}
+text response FAMILIARResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_FAMILIAR.FAMILIAR_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response ExtendedFMPrompt: 
+ inputs {
+ "Would you like ExtendedFM? If yes, enter ExtendedFM to select"
+
+}
+text response ExtendedFMResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_ExtendedFM.ExtendedFM_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response MoSoPoLiTePrompt: 
+ inputs {
+ "Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe to select"
+
+}
+text response MoSoPoLiTeResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_MoSoPoLiTe.MoSoPoLiTe_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like FeatureIDE? If yes, enter FeatureIDE"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response FeatureIDEPrompt: 
+ inputs {
+ "Would you like FeatureIDE? If yes, enter FeatureIDE to select"
+
+}
+text response FeatureIDEResponse: 
+ inputs {
+ "You have selected the feature: "
+ ["Select_FeatureIDE.FeatureIDE_type"]
+	" Would you like JDT? If yes, enter JDT"
+	" Would you like CDT? If yes, enter CDT"
+	" Would you like AJDT? If yes, enter AJDT"
+	" Would you like FeatureModeling? If yes, enter FeatureModeling"
+	" Would you like CIDE? If yes, enter CIDE"
+	" Would you like FAMILIAR? If yes, enter FAMILIAR"
+	" Would you like ExtendedFM? If yes, enter ExtendedFM"
+	" Would you like MoSoPoLiTe? If yes, enter MoSoPoLiTe"
+	" Would you like DeltaJEclipsePlugin? If yes, enter DeltaJEclipsePlugin"
+
+}
+text response FeatureIDEType:
+ inputs{ 
+"You can choose one or more of the following features:
+AHEAD, FeatureHouse, FeatureCpp, DeltaJ, AspectJ, Munge, Antenna, DeltaMontiArc"
+}
+flows:
+- user Greeting => chatbot GreetingResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user Help => chatbot HelpResponse{ 
+=> user Help_yes => chatbot Help_yesResponse;
+=> user Help_no => chatbot Help_noResponse;
+
+}; 
+ 
+- user JDT  => chatbot JDTType{ 
+	=> user "Select_JDT" => chatbot JDTResponse;
+};
+- user CDT  => chatbot CDTType{ 
+	=> user "Select_CDT" => chatbot CDTResponse;
+};
+- user AJDT  => chatbot AJDTType{ 
+	=> user "Select_AJDT" => chatbot AJDTResponse;
+};
+- user CIDE  => chatbot CIDEType{ 
+	=> user "Select_CIDE" => chatbot CIDEResponse;
+};
+- user FAMILIAR  => chatbot FAMILIARType{ 
+	=> user "Select_FAMILIAR" => chatbot FAMILIARResponse;
+};
+- user ExtendedFM  => chatbot ExtendedFMType{ 
+	=> user "Select_ExtendedFM" => chatbot ExtendedFMResponse;
+};
+- user MoSoPoLiTe  => chatbot MoSoPoLiTeType{ 
+	=> user "Select_MoSoPoLiTe" => chatbot MoSoPoLiTeResponse;
+};
+- user DeltaJEclipsePlugin  => chatbot DeltaJEclipsePluginType{ 
+	=> user "Select_DeltaJEclipsePlugin" => chatbot DeltaJEclipsePluginResponse;
+};
+- user FeatureModeling  => chatbot FeatureModelingType{ 
+	=> user "Select_FeatureModeling" => chatbot FeatureModelingResponse;
+};
+- user FeatureIDE  => chatbot FeatureIDEType{ 
+	=> user "Select_FeatureIDE" => chatbot FeatureIDEResponse;
+};
+- user Select_FeatureModeling_yes  => chatbot FeatureModelingType{ 
+	=> user "Select_FeatureModeling" => chatbot FeatureModelingResponse;
+};
+- user Select_FeatureIDE_yes  => chatbot FeatureIDEType{ 
+	=> user "Select_FeatureIDE" => chatbot FeatureIDEResponse;
+};

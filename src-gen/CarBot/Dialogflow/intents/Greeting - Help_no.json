@@ -1,0 +1,35 @@
+{
+	"id": "338a676d-2c8b-4ccd-997f-d755dad30fbc",
+	"name": "Greeting - Help_no",
+	"auto": true,
+	"contexts": ["Greeting-followup"],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [
+			],
+			"parameters": [
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"condition": "",
+					"speech": [
+						"Thank you for using SPLBot! "
+					]
+				}
+	],
+	"defaultResponsePlatforms": {},
+	"speech": []
+	}
+	],
+	"priority": 500000,
+	"webhookUsed": false,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false,
+	"events": [],
+	"conditionalResponses": [],
+	"condition": "",
+	"conditionalFollowupEvents": []
+}

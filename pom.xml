@@ -5,11 +5,14 @@
   <groupId>SPLDemo</groupId>
   <artifactId>SPLDemo.model</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
   <packaging>jar</packaging>
 
   <name>SPLDemo.model</name>
   <url>http://maven.apache.org</url>
-
+	
+	
+	
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -21,7 +24,36 @@
 		</repository>
 	</repositories>
 
+	
   <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/org.eclipse.xtext/org.eclipse.xtext -->
+		<dependency>
+			<groupId>org.eclipse.xtext</groupId>
+			<artifactId>org.eclipse.xtext</artifactId>
+			<version>2.22.0.M2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore -->
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.common -->
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.common</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.emf/org.eclipse.emf.ecore.xmi -->
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+	 <!-- -->
    <dependency>
 	    <groupId>com.github.jaytaylor</groupId>
 	    <artifactId>jaws</artifactId>
@@ -55,14 +87,33 @@
     <version>2.10.2</version>
 </dependency>
 
-
+<!--
   <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
     <version>2.3.0</version>
   </dependency>
-  
- 
+  -->
+ <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.0-b170201.1204</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/javax.activation/activation -->
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>2.3.0-b170127.1453</version>
+</dependency>
 
 <dependency>
   <groupId>net.sf.extjwnl</groupId>
@@ -104,12 +155,14 @@
 </dependencies>
 
 <build>
+<sourceDirectory>src</sourceDirectory>
   <plugins>
     <!--
     This plugin configuration will enable Maven to include the project dependencies
     in the produced jar file.
     It also enables us to run the jar file using `java -jar command`
     -->
+     <!--
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-shade-plugin</artifactId>
@@ -131,6 +184,15 @@
         </execution>
       </executions>
     </plugin>
+     -->
+     <plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
   </plugins>
 </build>
 </project>
